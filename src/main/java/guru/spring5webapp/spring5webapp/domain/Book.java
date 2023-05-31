@@ -17,7 +17,7 @@ public class Book {
     private String isbn;
     @ManyToMany
     @JoinTable(name = "author_book",joinColumns = @JoinColumn(name = "book_id"), inverseJoinColumns = @JoinColumn(name = "author_id"))
-    private Set<Author> autors=new HashSet<>();
+    private Set<Author> authors=new HashSet<>();
 
     public Book() {
     }
@@ -26,7 +26,7 @@ public class Book {
     {
         this.title = title;
         this.isbn = isbn;
-        this.autors = autors;
+        this.authors = authors;
     }
 
     public Long getId() {
@@ -53,11 +53,11 @@ public class Book {
     }
 
     public Set<Author> getAutors() {
-        return autors;
+        return authors;
     }
 
     public void setAutors(Set<Author> autors) {
-        this.autors = autors;
+        this.authors = autors;
     }
 //toString implementation --> alt+ insert --> toString --> all
     @Override
@@ -66,7 +66,7 @@ public class Book {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", isbn='" + isbn + '\'' +
-                ", autors=" + autors +
+                ", autors=" + authors +
                 '}';
     }// END toString implementation
 
